@@ -2,9 +2,16 @@ package fosia.fosia;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
+import com.parse.ParseException;
+import com.parse.ParsePush;
+import com.parse.SaveCallback;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -16,10 +23,25 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // WebView Content
         webview = (WebView) findViewById(R.id.webView);
         webview.getSettings().setJavaScriptEnabled(true);
-
         webview.loadUrl("http://zfnco1.axshare.com/app_home.html");
+
+        // Parse Pushing
+        Parse.initialize(this, "r9VHXEgJ5x715RTVzTd3uUs8WyIZ2NqT5BmhFcxa", "5iEkCmKnms48SMIDJdPMAnVonMjiMHVlNeS31Kq3");
+        ParsePush.subscribeInBackground("SocialInnovation", new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    Log.d("com.parse.push", "successfully subscribed to the broadcast channel.");
+                } else {
+                    Log.e("com.parse.push", "failed to subscribe for push", e);
+                }
+            }
+        });
+
+        ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
     }
 
