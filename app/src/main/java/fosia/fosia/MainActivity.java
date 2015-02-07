@@ -1,11 +1,15 @@
 package fosia.fosia;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.ImageView;
 
 import com.parse.Parse;
 import com.parse.ParseAnalytics;
@@ -14,7 +18,7 @@ import com.parse.ParsePush;
 import com.parse.SaveCallback;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     private WebView webview;
 
@@ -24,9 +28,30 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         // WebView Content
-        webview = (WebView) findViewById(R.id.webView);
-        webview.getSettings().setJavaScriptEnabled(true);
-        webview.loadUrl("http://zfnco1.axshare.com/app_home.html");
+        final WebView wv = (WebView) findViewById(R.id.webView);
+        wv.getSettings().setJavaScriptEnabled(true);
+        wv.setWebViewClient(new WebViewClient() {
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                //hide loading image
+                final ImageView iv = (ImageView) findViewById(R.id.splashView);
+                iv.animate().alpha(0f).setDuration(1000).withEndAction(new Runnable() {
+                    @Override
+                    public void run() {
+                        iv.setVisibility(View.GONE);
+                        wv.setVisibility(View.VISIBLE);
+                        wv.setAlpha(0f);
+                        //show webview
+                       wv.animate().alpha(100f).setDuration(2000);
+                    }
+                });
+
+            }
+
+
+        });
+        wv.loadUrl("http://3s81gd.axshare.com/app_home.html");
 
         // Parse Pushing
         Parse.initialize(this, "r9VHXEgJ5x715RTVzTd3uUs8WyIZ2NqT5BmhFcxa", "5iEkCmKnms48SMIDJdPMAnVonMjiMHVlNeS31Kq3");
@@ -45,6 +70,11 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        Parse.initialize(this, "r9VHXEgJ5x715RTVzTd3uUs8WyIZ2NqT5BmhFcxa", "5iEkCmKnms48SMIDJdPMAnVonMjiMHVlNeS31Kq3");
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -66,5 +96,16 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(!this.getClass().equals(MainActivity.class)) {
+            Intent setIntent = new Intent(this, MainActivity.class);
+            startActivity(setIntent);
+        } else {
+            super.onBackPressed();
+        }
+
     }
 }
