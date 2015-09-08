@@ -5,4 +5,48 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main">FOSIA</string>
+
+    <string name="home">Hjem</string>
+    <string name="cases">Cases</string>
+    <string name="program">Program</string>
+    <string name="messages">Meddelelser</string>
+    <string name="cast">Medvirkende</string>
+    <string name="media">Sociale Medier</string>
+    <string name="sponsors">Sponsorer</string>
+    <string name="practical">Praktisk</string>
+
+
+    <!-- Cases -->
+    <string name="case1title">Sundhedscase</string>
+    <string name="case1problem">Hvordan kan man indrette et sygehus, så det tager udgangspunkt i borgerens/patientens oplevelse?</string>
+    <string name="case1description">Det nuværende sundhedssystem har haft en række ønskede effekter, og bl.a. nedbragt ventelister og skabt øget kontrol med sygehusenes budgetter. Systemet lægger dog også op til nogle uhensigtsmæssige ting, herunder, at det i mindre grad tager højde for borgernes/patienternes oplevelse af et sygehusbesøg.</string>
+    <string name="case1text2">Patientoplevet kvalitet skal forstås bredt, der er ikke tale om en bestemt definition eller mål for kvaliteten.\n\nHvordan kan man sikre en bedre overensstemmelse mellem den medicinske ekspertise og borgerens oplevelse af kvalitet?</string>
+    <string name="case1consequences">\n
+        &#8226; Forkert valg af behandling\n
+        &#8226; Forringet livskvalitet\n
+        &#8226; Offer fremfor aktør\n
+        &#8226; Symptomer/legemsdele fremfor helhed\n
+        &#8226; Usammenhængende forløb\n
+        &#8226; Dobbeltarbejde, tidspilde\n
+        &#8226; Dyre (for specialicerede) løsninger\n
+    </string>
+    <string name="case1notworking">\n
+        &#8226; Uhensigsmæssige incitamenter\n
+        &#8226; Dårlig intern koordination mellem afdelinger\n
+        &#8226; Manglende indsigt\n
+    </string>
+
+
+    <string name="case2title">Tryghedscase</string>
+    <string name="case2problem">Hvordan øges ældres tryghed, så de har lyst til og mulighed for at blive boende længere tid i eget hjem?</string>
+    <string name="case2description">Vi har i de demografiske udviklingsprognoser længe kunne se, at andelen af ældre i befolkningen bliver større og større. Dette betyder at vi i fremtiden vil opleve et større og større pres på de danske plejehjem – et pres som både for borgeren og samfundet som helhed kan have negative konsekvenser. For mange ældre mennesker er det et stort ønske at blive i eget hjem, så længe som muligt fremfor en tilværelse på et plejehjem.</string>
+
+    <string name="case3title">Bylivscase</string>
+    <string name="case3problem">Hvordan sikrer vi bylivet i Sydhavnskvarteret?</string>
+    <string name="case3description">De bynære havnearealer er i en massiv forandringsproces i øjeblikket. Kongstanken for omdannelsen af havnefronten til ny bydel er at genetablere kontakten mellem byen og bugten. Planerne for de bynære havnearealer er i vidt omfang allerede på plads – men ikke alle steder er det fastlagt, hvad der skal ske med området. Netop dette er tilfældet for Sydhavnskvarteret.</string>
+
+
 </resources>

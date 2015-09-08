@@ -1,6 +1,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="fosia.fosia.MainActivity">
+
+    <item android:id="@+id/header" android:title="Modtag Notifikationer"
+        android:orderInCategory="100"
+        android:checkable="false"
+        android:enabled="false"
+        android:icon="@android:drawable/ic_popup_reminder"
+        app:showAsAction="never" />
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/case1" android:title="Case 1"
+            android:orderInCategory="100" app:showAsAction="never" />
+
+        <item android:id="@+id/case2" android:title="Case 2"
+            android:orderInCategory="100" app:showAsAction="never" />
+
+        <item android:id="@+id/case3" android:title="Case 3"
+            android:orderInCategory="100" app:showAsAction="never" />
+
+        <item android:id="@+id/all" android:title="Alle"
+            android:orderInCategory="100" app:showAsAction="never" />
+
+        <item android:id="@+id/none" android:title="Ingen"
+            android:orderInCategory="100" app:showAsAction="never" />
+    </group>
 </menu>
