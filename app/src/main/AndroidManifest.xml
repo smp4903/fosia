@@ -68,7 +68,7 @@
             >
         </activity>
 
-        <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/logo"/>
+        <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/logo1"/>
 
     </application>
 
